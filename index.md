@@ -1,6 +1,6 @@
 ﻿# 東方ミステリ合同誌　第三弾！！！
 
-![表紙イラスト](hyoushi_logo_preview.jpg)
+<img src="hyoushi_logo_preview.jpg" width="50%">
 
 ## 〝幻想世界の日常ミステリ〟
 第三弾となる今回は、「日常編」と「犯罪編」の二本を製作。
@@ -73,8 +73,8 @@ by [銘宮](https://twitter.com/__meimiya__)
 
 * * *
 ## 既刊紹介
-東方ミステリ合同２ 心地よく幻想めいた場所
 
-![東方ミステリ合同２](mystery2.jpg)
+[東方ミステリ合同２ 心地よく幻想めいた場所](https://kazakiribane201805.tumblr.com/)
+<img src="mystery2.jpg" width="50%">
 
 [メロンブックス](https://www.melonbooks.co.jp/detail/detail.php?product_id=362266)
