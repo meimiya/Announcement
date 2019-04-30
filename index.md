@@ -1,7 +1,6 @@
 ﻿# 東方ミステリ合同誌　第三弾！！！
 
-|:---:|
-|<img src="hyoushi_logo_preview.jpg" width="50%">|
+<img src="hyoushi_logo_preview.jpg" width="50%">
 
 ## 〝幻想世界の日常ミステリ〟
 第三弾となる今回は、「日常編」と「犯罪編」の二本を製作。
@@ -31,6 +30,7 @@
 
 #### 流し白玉の消失
 by [まぜあん](https://twitter.com/kozera_hinami)
+
 イラスト　by [みぞれし](https://twitter.com/mizorec131)
 > 博麗神社で開催された流しそうめん大会。その終盤、白玉楼提供のデザート「ふわとろ白玉」が、あうん監視の竹水路から忽然と消えてしまう。
 > 体調不良で留守番をしていた妖夢が導き出した犯人とは――。
@@ -86,7 +86,6 @@ by [銘宮](https://twitter.com/__meimiya__)
 [東方ミステリ合同２ 心地よく幻想めいた場所](https://kazakiribane201805.tumblr.com/)
 
 
-|:---:|
-|<img src="mystery2.jpg" width="50%">|
+<img src="mystery2.jpg" width="50%">
 
 [メロンブックス](https://www.melonbooks.co.jp/detail/detail.php?product_id=362266)
