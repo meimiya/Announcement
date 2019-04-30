@@ -1,8 +1,7 @@
 ﻿# 東方ミステリ合同誌　第三弾！！！
- 
-<div style="text-align: center;">
-  <img src="hyoushi_logo_preview.jpg" width="50%">
-</div>
+
+|:---:|
+|<img src="hyoushi_logo_preview.jpg" width="50%">|
 
 ## 〝幻想世界の日常ミステリ〟
 第三弾となる今回は、「日常編」と「犯罪編」の二本を製作。
@@ -52,6 +51,7 @@ by [やこうせいの亀](https://twitter.com/animemania21106)
 > ある夜、湖で妖怪が人間を襲っている事件が起きた。犯人を見るのに夢中になっていた私は、襲われていた人間が忽然と消えていた事に気付かなかった。
 > 人間は一体どこへ消えたのか。
 > 私は犯人に惑わされ、目が覚めたら……。
+
 ※漫画作品
 
 #### 春の幻
@@ -69,6 +69,7 @@ by [アン・シャーリー](https://twitter.com/AnneShirley_)
 
 #### 静かに光りつづけるもの
 by [電柱.](https://twitter.com/actgawa)
+
 イラスト　by [みみや](https://twitter.com/foxrainy6)
 > プリズムリバー幻楽団の三人が力を合わせ、レイラ・プリズムリバーが生前に残した隠し財産を探す物語です。
 
@@ -84,8 +85,8 @@ by [銘宮](https://twitter.com/__meimiya__)
 
 [東方ミステリ合同２ 心地よく幻想めいた場所](https://kazakiribane201805.tumblr.com/)
 
-<div style="text-align: center;">
-  <img src="mystery2.jpg" width="50%">
-</div>
+
+|:---:|
+|<img src="mystery2.jpg" width="50%">|
 
 [メロンブックス](https://www.melonbooks.co.jp/detail/detail.php?product_id=362266)
