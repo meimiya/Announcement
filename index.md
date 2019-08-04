@@ -73,6 +73,7 @@ by [町田一軒家](https://twitter.com/matida_ikkennya)
 
 [メロンブックス](https://www.melonbooks.co.jp/detail/detail.php?product_id=502608)
 
+* * *
 
 [東方ミステリ合同２ 心地よく幻想めいた場所](https://kazakiribane201805.tumblr.com/)
 
