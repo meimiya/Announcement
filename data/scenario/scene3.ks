@@ -86,7 +86,7 @@ f.m_watashi_shika_inai = "　密室を構成できたのは私しかいない。
 
 [current layer=message0]
 
-[jump target=think1]
+;[jump target=think1]
 
 [line i=0]
 [line i=1]
