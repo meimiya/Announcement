@@ -1,5 +1,6 @@
-function hit_count(f, lines)
+function hit_count(lines)
 {
+    var f = TYRANO.kag.stat.f;
     var count = 0;
     for(var i = 0; i < lines.length; i++)
     {
@@ -19,8 +20,9 @@ function hit_count(f, lines)
     return count;
 }
 
-function refresh_question(mp, f)
+function refresh_question(mp)
 {
+    var f = TYRANO.kag.stat.f;
     var text = "矛盾を構成する文を選択せよ。";
     if("text" in mp)
     {
@@ -53,8 +55,9 @@ function setHover(sp)
 }
 
 //  一文を追加
-function setLink(kag, f, mp, i)
+function setLink(kag, mp, i)
 {
+    var f = TYRANO.kag.stat.f;
     span.push(kag.setMessageCurrentSpan());
     var sp = span[i - f.page[f.p][0]];
     sp.css("padding", "3px");
@@ -90,7 +93,7 @@ function setLink(kag, f, mp, i)
                 let _i = ii + f.page[f.p][0];
                 span[ii].css("color", 0 <= f.checked.indexOf(_i) ? "red" : (_i < f.m_length ? "white" : "lightgreen"));
             }
-            refresh_question(mp, f);
+            refresh_question(mp);
         });
         setHover(sp);
         sp.css("opacity", "1");
@@ -101,17 +104,25 @@ function setLink(kag, f, mp, i)
     }
 
     kag.ftag.startTag("text", {"val":text});
-    if (i + 1 < f.m.length && ['　', '「'].indexOf(f.m[i + 1][0]) != -1)
+
+    if (i + 1 < f.m.length)
     {
-        var j_inner_message = kag.getMessageInnerLayer();
-        var txt = j_inner_message.find("p").find(".current_span").html()+"<br />";
-        j_inner_message.find("p").find(".current_span").html(txt);
+        text = f.m[i + 1];
+        while (text[0] == ";")
+        {
+            text = text.substring(1);
+        }
+        if(rch.indexOf(text[0]) != -1)
+        {
+            TYRANO.kag.ftag.startTag("r");
+        }
     }
     sp.css("color", 0 <= f.checked.indexOf(i) ? "red" : (i < f.m_length ? "white" : "lightgreen"));
 }
 
-function setPageButton(that, f, mp, i)
+function setPageButton(that, mp, i)
 {
+    var f = TYRANO.kag.stat.f;
     var jtext = that.getMessageInnerLayer();
     var sp = $("<span class='page_button'></span>");
     page_button.push(sp);
@@ -119,11 +130,20 @@ function setPageButton(that, f, mp, i)
     
     button_css["padding"] = "3px 35px 3px 35px";
     button_css["top"] = "500px";
-    button_css["left"] = (10 + i * 180) + "px";
     button_css["font-size"] = "28px";
     button_css["color"] = f.p == i ? "#e7e6e4" : "#5e92a2";
     button_css["background"] = f.p == i ? "#5e92a2" : "#e7e6e4";
     button_css["box-shadow"] = "10px 10px " + button_css["color"];
+    if(i == 0)
+    {
+        button_css["left"] = "10px";
+        sp.text("PAGE " + (i + 1));
+    }
+    else
+    {
+        button_css["left"] = (90 + i * 105) + "px";
+        sp.text("" + (i + 1));
+    }
     sp.css(button_css);
     sp.hover(
         function(){
@@ -134,13 +154,13 @@ function setPageButton(that, f, mp, i)
     );
     sp.click(function(e) {
         f.p = i;
-        setupPage(that, f, mp);
+        setupPage(that, mp);
     });
-    sp.text("PAGE " + (i + 1));
 }
 
-function setupPage(that, f, mp)
+function setupPage(that, mp)
 {
+    var f = TYRANO.kag.stat.f;
     that.kag.ftag.startTag("cm", {});
     that.kag.ftag.startTag("nowait", {});
 
@@ -167,7 +187,7 @@ function setupPage(that, f, mp)
     span = [];
     for (var i = f.page[f.p][0]; i <= f.page[f.p][1] && i < f.m.length; i++)
     {
-        setLink(that.kag, f, mp, i);
+        setLink(that.kag, mp, i);
     }
 
     var jtext = that.getMessageInnerLayer();
@@ -254,7 +274,7 @@ function setupPage(that, f, mp)
     page_button = [];
     for(var i = 0; i < f.page.length; i++)
     {
-        setPageButton(that, f, mp, i);
+        setPageButton(that, mp, i);
     }
 
     //---------------------------------------------------------------------
@@ -271,7 +291,7 @@ function setupPage(that, f, mp)
     button_css["box-shadow"] = "10px 10px #5e92a2";
     question.css(button_css);
 
-    refresh_question(mp, f);
+    refresh_question(mp);
     
     that.kag.ftag.startTag("endnowait", {});
 }

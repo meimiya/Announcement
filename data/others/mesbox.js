@@ -1,7 +1,7 @@
 is_mes_open = false;
 rch = ['　', '「'];
 
-function openMesbox(face = '😀')
+function openMesbox(face = '😀', extra = "false")
 {
     TYRANO.kag.ftag.startTag("current", {
         "layer":"message1",
@@ -33,7 +33,7 @@ function openMesbox(face = '😀')
 
         let mesInner = TYRANO.kag.getMessageInnerLayer();
         mesInner.css("margin", "0");
-        mesInner.css("top", "440px");
+        mesInner.css("top", "430px");
 
         let mesOuter = TYRANO.kag.getMessageOuterLayer();
         mesOuter.css("border-radius", "10px");
@@ -45,6 +45,18 @@ function openMesbox(face = '😀')
     $(".mesboxFace").text(face);
 
     is_mes_open = true;
+
+    if(extra == "true")
+    {
+        let extraMark = $("<div class='extraMark'></div>");
+        TYRANO.kag.getMessageOuterLayer().append(extraMark);
+
+        extraMark.text("❗");
+    }
+    else
+    {
+        $(".extraMark").remove();
+    }
 }
 
 function openGoal(title, text)

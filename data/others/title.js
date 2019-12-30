@@ -1,5 +1,7 @@
 function showTitle()
 {
+    TYRANO.kag.stat.f.p = 0;
+
     TYRANO.kag.stat.current_layer = "message0";
     let mesOuter = TYRANO.kag.getMessageOuterLayer();
     mesOuter.css("background", "linear-gradient(#112244, #1D62F0) fixed");
@@ -44,11 +46,11 @@ function showTitle()
         TYRANO.kag.ftag.startTag("jump", {"target":"scene2"});
     });
     button2.hover(function(){
-        face.text("😕");
+        face.text("🤫");
     }, function(){
         face.text("😀");
     });
-/*
+
     let button3 = $("<div class='chapterButton'></div>");
     mesInner.append(button3);
     button3.css("top", "500px");
@@ -61,7 +63,6 @@ function showTitle()
     }, function(){
         face.text("😀");
     });
-*/
 }
 
 function clearTitle()

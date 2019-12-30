@@ -1,23 +1,19 @@
 ;一番最初に呼び出されるファイル
 
 [title name="ノベルデバッガー"]
-
 [configdelay speed="5"]
-
 [loadjs storage=title.js]
 [loadjs storage=mesbox.js]
 [loadjs storage=thinking.js]
 [call storage=thinking.ks]
-
-;最初は右下のメニューボタンを非表示にする
-[hidemenubutton]
-
 [stop_keyconfig]
+
+;NG：😕😮
 
 ;------------------------------------------------------------------------------
 ;   マクロ定義
 [macro name=mes_open]
-    [eval exp="openMesbox(mp.face)"]
+    [eval exp="openMesbox(mp.face, mp.extra)"]
 [endmacro]
 
 [macro name=mes_close]
@@ -29,7 +25,7 @@
 
 [macro name=line]
     [iscript]
-        var text = f.m[parseInt(mp.index)];
+        var text = f.m[parseInt(mp.i)];
         while (text[0] == ";")
         {
             text = text.substring(1);
@@ -38,9 +34,9 @@
     [endscript]
     [l]
     [iscript]
-        if(parseInt(mp.index) + 1 < f.m.length)
+        if(parseInt(mp.i) + 1 < f.m.length)
         {
-            var text = f.m[parseInt(mp.index) + 1];
+            var text = f.m[parseInt(mp.i) + 1];
             while (text[0] == ";")
             {
                 text = text.substring(1);
@@ -66,6 +62,7 @@
     [text val=%text]
     [iscript]
         setHover(this.getMessageCurrentSpan());
+        this.getMessageCurrentSpan().css("color", "#aaffff");
     [endscript]
     [endlink]
     [r]
@@ -74,6 +71,9 @@
 
 [macro name=black_in]
     [position layer=message2 left=0 top=0 width=960 height=640 marginl=0 margint=0 marginr=0 page=fore visible=true opacity=255]
+    [iscript]
+        $(".message2_fore > .message_outer").css("background", "black");
+    [endscript]
     [layopt layer=message2 visible=true]
     [anim layer=message2 opacity=0 time=1000]
     [wa]
@@ -82,9 +82,23 @@
 
 [macro name=black_out]
     [position layer=message2 left=0 top=0 width=960 height=640 marginl=0 margint=0 marginr=0 page=fore visible=true opacity=0]
+    [iscript]
+        $(".message2_fore > .message_outer").css("background", "black");
+    [endscript]
     [layopt layer=message2 visible=true]
     [anim layer=message2 opacity=255 time=1000]
     [wa]
+[endmacro]
+
+[macro name=flash]
+    [position layer=message2 left=0 top=0 width=960 height=640 marginl=0 margint=0 marginr=0 page=fore visible=true opacity=128]
+    [iscript]
+        $(".message2_fore > .message_outer").css("background", "white");
+    [endscript]
+    [layopt layer=message2 visible=true]
+    [anim layer=message2 opacity=0 time=300]
+    [wa]
+    [layopt layer=message2 visible=false]
 [endmacro]
 
 ;------------------------------------------------------------------------------

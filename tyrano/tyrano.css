@@ -320,3 +320,40 @@ body{
 	text-shadow: 1px 1px black;
 	text-align: center;
 }
+
+.extraMark {
+	position: absolute;
+	top: -120px;
+	left: 150px;
+	font-size: 100px;
+	text-shadow: 10px 10px gray;
+	animation: extraMarkPopup 2s ease 0.2s;
+}
+@keyframes extraMarkPopup {
+	0% {
+		transform: translateY(0px);
+    }
+    10% {
+		transform: translateY(-100px);
+    }
+	20% {
+		transform: translateY(0px);
+    }
+}
+
+.character {
+	position: absolute;
+	color: #93ffaa;
+	text-align: center;
+	font-size: 20px;
+	width: 30px;
+	height: 30px;
+	-moz-transition:all 0.2s ease;
+	-webkit-transition:all 0.2s ease;
+	transition:all 0.2s ease;
+	border-radius: 5px;
+	border-style: solid;
+	border-width: 2px;
+	border-color: #93ffaa;
+	z-index: 10;
+}
