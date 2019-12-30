@@ -91,6 +91,7 @@
 [endmacro]
 
 [macro name=flash]
+    [playse storage="crash.ogg"]
     [position layer=message2 left=0 top=0 width=960 height=640 marginl=0 margint=0 marginr=0 page=fore visible=true opacity=128]
     [iscript]
         $(".message2_fore > .message_outer").css("background", "white");
@@ -109,6 +110,7 @@
 [endscript]
 
 *title
+[stopbgm]
 [position layer=message0 left=0 top=0 width=960 height=640 marginl=20 margint=0 marginr=20 page=fore visible=true]
 [layopt layer=message0 visible=true]
 [current layer=message0]

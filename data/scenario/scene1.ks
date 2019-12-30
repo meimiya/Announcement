@@ -37,7 +37,8 @@ f.hint = 0;
 
 [current layer=message0]
 
-;[jump target=*goal]
+;[jump target=*think1]
+[playbgm storage=halloween_sleep.ogg]
 
 [line i=0]
 [line i=1]
@@ -98,9 +99,11 @@ f.hint = 0;
 [mes_open face="😊"]つまり、現実世界を描いていることが大前提なんだ。[p]
 
 *select1
+[stopbgm]
 [cm]
 [mes_open face="😃"]
 それじゃ、まず方針を立てよう。[p]
+[playbgm storage=lens.ogg]
 短いシーンの中から、小説としての食い違いを見つけ出すんだ。[p]
 [mes_open face="🤔"]
 一見普通のシーンだけど、粗を探すとしたら……[r]
@@ -110,6 +113,7 @@ f.hint = 0;
 [s]
 
 *select1_a
+[playse storage="select.ogg"]
 [cm]
 [mes_open face="😏"]
 川の土手が通学路なんて、昔のドラマじゃあるまいし、どうなのかな？[p]
@@ -118,6 +122,7 @@ f.hint = 0;
 [jump target=*select1]
 
 *select1_b
+[playse storage="select.ogg"]
 [cm]
 [mes_open face="🤔"]
 [image layer=0 visible=true page=fore storage=d1_1.jpg top=20 left=300 height=400]
@@ -135,6 +140,7 @@ f.hint = 0;
 [jump target=think1]
 
 *select1_c
+[playse storage="select.ogg"]
 [cm]
 [mes_open face="😦"]
 背後に気配を感じて振り向いたけど、誰もいなかった……。[p]
@@ -165,7 +171,7 @@ f.hint = 0;
     いまいちピンと来ない……。[l]もう一度考えてみよう。[p]
     [jump target=think1]
 [endif]
-[mes_open face="😄"]
+[mes_open face="😄" extra=true]
 これだ！[p]
 [image layer=0 visible=true page=back storage=d1_2.jpg top=20 left=300 height=400]
 北から吹く風で左の頬が冷たくなっている。[l]つまり、進行方向に対して左側が北だと〈私〉は言っている。[p]
@@ -193,6 +199,7 @@ f.hint = 0;
 [s]
 
 *select2_a
+[playse storage="select.ogg"]
 [cm]
 [mes_open face="😥"]
 そう、ここには時間が書いてない。[p]
@@ -205,10 +212,12 @@ f.hint = 0;
 ……いや、振り出しじゃない。[l]少なくとも「太陽は東にある」って新事実を導くことはできた。[p]
 こうやって本文から新たな事実を導出していけば、そのうち矛盾にたどり着けるかもしれない。[p]
 [mes_open face="🙂"]
-よし。新事実を本文に追記して、もう一度考えてみよう。[p]
+よし。新事実を本文に追記して、改めて矛盾を探そう。[p]
+矛盾がすぐに見つからないときは、書かれている文章から新しい事実を導けるかもしれない。[p]
 [jump target=*think2]
 
 *select2_b
+[playse storage="select.ogg"]
 [cm]
 [mes_open face="🤫"]
 いや、庄川って地名は明記してる。[l]見晴らしがいいってことはきっと下流の方だな。[p]
@@ -216,6 +225,7 @@ f.hint = 0;
 [jump target=*select2_a]
 
 *select2_c
+[playse storage="select.ogg"]
 [cm]
 [mes_open face="🤭"]
 確かに、この〈私〉が何者なのかははっきりしない。[l]私に似てるけど、もしかしたら別人なのかも。[p]
@@ -249,8 +259,7 @@ f.hint = 0;
 [jump target=*think2_main]
 
 *think2_answer
-[mes_open face="🤔"]
-[if exp="hit_count([15, 16]) == 2"]
+[if exp="hit_count([f.m_taiyou, f.m_gekou]) == 2"]
     [jump target=*goal]
 [endif]
 [if exp="hit_count([2, 14]) == 2"]
@@ -288,9 +297,11 @@ f.hint = 0;
 [jump target=*think2_main]
 
 *goal
+[stopbgm]
 [flash]
 [mes_open face="😑"]
 ……。[p]
+[playbgm storage=lens.ogg]
 [pickupLines a="f.m[2]" b="f.m[14]"]
 [mes_open face="😌"]
 〈私〉は手提げ袋を振り回しながら道を歩いている。[p]

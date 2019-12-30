@@ -30,6 +30,7 @@ function showTitle()
     button1.css("top", "300px");
     button1.text("第一問　通学路の恐怖");
     button1.click(function(e) {
+        TYRANO.kag.ftag.startTag("playse", {"storage":"decide.ogg"});
         TYRANO.kag.ftag.startTag("jump", {"target":"scene1"});
     });
     button1.hover(function(){
@@ -43,6 +44,7 @@ function showTitle()
     button2.css("top", "400px");
     button2.text("第二問　ノーブレーキ・トゥ・ヘブン");
     button2.click(function(e) {
+        TYRANO.kag.ftag.startTag("playse", {"storage":"decide.ogg"});
         TYRANO.kag.ftag.startTag("jump", {"target":"scene2"});
     });
     button2.hover(function(){
@@ -56,6 +58,7 @@ function showTitle()
     button3.css("top", "500px");
     button3.text("第三問　密室トリック破れたり");
     button3.click(function(e) {
+        TYRANO.kag.ftag.startTag("playse", {"storage":"decide.ogg"});
         TYRANO.kag.ftag.startTag("jump", {"target":"scene3"});
     });
     button3.hover(function(){

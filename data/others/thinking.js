@@ -73,6 +73,7 @@ function setLink(kag, mp, i)
     {
         sp.css("cursor", "pointer");
         sp.click(function(e) {
+            TYRANO.kag.ftag.startTag("playse", {"storage":"select.ogg"});
             if (0 <= f.checked.indexOf(i))
             {
                 f.checked.splice(f.checked.indexOf(i), 1);
@@ -153,6 +154,7 @@ function setPageButton(that, mp, i)
         }
     );
     sp.click(function(e) {
+        TYRANO.kag.ftag.startTag("playse", {"storage":"page.ogg"});
         f.p = i;
         setupPage(that, mp);
     });
@@ -217,6 +219,7 @@ function setupPage(that, mp)
         {
             return;
         }
+        TYRANO.kag.ftag.startTag("playse", {"storage":"decide.ogg"});
         that.kag.ftag.startTag("cm");
         that.kag.layer.showEventLayer();
         that.kag.ftag.nextOrderWithLabel(mp.answer, mp.storage);
@@ -253,6 +256,7 @@ function setupPage(that, mp)
             }
         );
         note_button.click(function(e) {
+            TYRANO.kag.ftag.startTag("playse", {"storage":"decide.ogg"});
             that.kag.ftag.startTag("cm");
             that.kag.layer.showEventLayer();
             that.kag.ftag.nextOrderWithLabel(mp.note, mp.storage);

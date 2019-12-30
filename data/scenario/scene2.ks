@@ -47,6 +47,7 @@ f.m_betsu = "　「私の前の不良」と「ターくんと呼ばれた不良�
 [current layer=message0]
 
 ;[jump target=think1]
+[playbgm storage=halloween_sleep.ogg]
 
 [line i=0]
 [line i=1]
@@ -71,6 +72,9 @@ f.m_betsu = "　「私の前の不良」と「ターくんと呼ばれた不良�
 [line i=20]
 [line i=21]
 [line i=22][cm]
+
+[stopbgm]
+[playbgm storage=lens.ogg]
 
 *loop2
 [mes_open face="🥴"]
@@ -131,9 +135,9 @@ f.m_betsu = "　「私の前の不良」と「ターくんと呼ばれた不良�
 [mes_open face="🤫"]
 荒唐無稽だけど、明らかに間違ってるって場所は見当たらないなぁ。[p]
 [mes_open face="🙂"]
-今回はちょっと長いから、わからなくても適当にいくつかピックアップして考察してみよう。[p]
+今回はちょっと長いから、直接は矛盾に到達できなさそうだけど……[p]
 [mes_open face="😊"]
-色々な文を組み合わせているうちに、何か思いつくかもしれないしね。[p]
+関連のありそうな文と文を組み合わせて、どんどん新しい事実を導き出せば、きっとそのうち矛盾する二文が現れるよね。[p]
 [mes_close]
 [cm]
 
@@ -178,10 +182,12 @@ f.m_betsu = "　「私の前の不良」と「ターくんと呼ばれた不良�
     [link_hover target=select1_success text="２０インチのブラウン管テレビ……"]
     [s]
     *select1_failed
+    [playse storage="select.ogg"]
     [mes_open face="😔"]
     むぅ……？　何か勘違いしてる？[p]
     [jump target=think1]
     *select1_success
+    [playse storage="select.ogg"]
     [mes_open face="😯"]
     そうだ！　テレビが座席を占領しているんだった。[p]
     [mes_open face="🤔"]
@@ -209,10 +215,12 @@ f.m_betsu = "　「私の前の不良」と「ターくんと呼ばれた不良�
     [link_hover target=select2_failed text="私の前に座る不良が……"]
     [s]
     *select2_failed
+    [playse storage="select.ogg"]
     [mes_open face="😔"]
     むぅ……？　何か勘違いしてる？[p]
     [jump target=think1]
     *select2_success
+    [playse storage="select.ogg"]
     [mes_open face="😉"]
     これだ！[p]
     仮に後部座席にテレビと三人が横並びに座れたとしても、その三人が全員シートベルトを締めるのはさすがにきついはずだ。[p]
@@ -354,9 +362,11 @@ f.m_betsu = "　「私の前の不良」と「ターくんと呼ばれた不良�
 [jump target=think1]
 
 *goal
+[stopbgm]
 [flash]
 [mes_open face="😑" extra=true]
 ……。[p]
+[playbgm storage=lens.ogg]
 [mes_open face="😉"]
 肝心なのは、「車に何人乗っているか？」って点だ。[p]
 パッと見、登場人物は〈私〉、不良、先輩、そして少女の四人に思える。[p]
