@@ -6,7 +6,7 @@
 
 
 [iscript]
-f.m = [
+tf.m = [
     ';　茜色の空を見上げながら、私はぼんやりと土手の上を歩いていた。',
     ';　庄川は地平の彼方までまっすぐ続いているが、土手の道は見渡す限り無人だ。',
     '子供のように手提げ袋を振り回しても、誰にも見とがめられない。',
@@ -23,23 +23,24 @@ f.m = [
     ';足がもつれ、派手に転んでしまう。',
     '急いで通学鞄をひっ掴み、転げ出た弁当箱を手提げ袋に戻して、私は『何か』から一目散に逃げ出した。'
 ]
-f.m_length = f.m.length
-f.page = [
+tf.m_length = tf.m.length
+tf.page = [
     [0, 11],
     [12, 16],
 ]
 
-f.m_taiyou = "　太陽は東にある。";
-f.m_gekou = "　私は下校途中である。";
+tf.m_taiyou = "　太陽は東にある。";
+tf.m_gekou = "　私は下校途中である。";
 
-f.hint = 0;
+tf.hint = 0;
 [endscript]
 
 [current layer=message0]
 
-;[jump target=*think1]
+;[jump target=test]
 [playbgm storage=halloween_sleep.ogg]
 
+[comment scene=scene1 context=read1]
 [line i=0]
 [line i=1]
 [line i=2]
@@ -47,6 +48,7 @@ f.hint = 0;
 [line i=4]
 [line i=5]
 [line i=6]
+[comment scene=scene1 context=read2]
 [line i=7]
 [line i=8]
 [line i=9]
@@ -56,6 +58,7 @@ f.hint = 0;
 [line i=13][cm]
 
 *prologue
+[comment scene=scene1 context=prologue1]
 [mes_open face="😔"]
 はーあ。[l]今日もいっぱい仕事が溜まってるなぁ。[p]
 [mes_open face="😐"]
@@ -72,6 +75,7 @@ f.hint = 0;
 さてさて、まずは小説の内容を把握するところからだね。[p]
 えーと、「茜色の空を」……？[p]
 [mes_close]
+[comment scene=scene1 context=prologue2]
 [line i=0]
 [line i=1]
 [line i=2]
@@ -99,6 +103,7 @@ f.hint = 0;
 [mes_open face="😊"]つまり、現実世界を描いていることが大前提なんだ。[p]
 
 *select1
+[comment scene=scene1 context=select1_1]
 [stopbgm]
 [cm]
 [mes_open face="😃"]
@@ -122,6 +127,7 @@ f.hint = 0;
 [jump target=*select1]
 
 *select1_b
+[comment scene=scene1 context=select1_2]
 [playse storage="select.ogg"]
 [cm]
 [mes_open face="🤔"]
@@ -152,10 +158,12 @@ f.hint = 0;
 [jump target=*select1]
 
 *think1
+[comment scene=scene1 context=think1]
 [mes_close]
 [think count_max=1 storage=scene1.ks answer=think1_answer note=think1_note text="背後に長い影が伸びていることと矛盾する文は？"]
 
 *think1_note
+[comment scene=scene1 context=think1_note]
 [mes_open face="🤔"]
 [image layer=0 visible=true page=back storage=d1_2.jpg top=20 left=300 height=400]
 夕日の影は東に伸びる。つまり〈私〉が進んでいる方向は東だ。[p]
@@ -166,14 +174,15 @@ f.hint = 0;
 
 *think1_answer
 [mes_open face="🤔"]
-[if exp="f.checked[0] != 7"]
+[if exp="tf.checked[0] != 7"]
     んー……。[p]
     いまいちピンと来ない……。[l]もう一度考えてみよう。[p]
     [jump target=think1]
 [endif]
+[comment scene=scene1 context=think1_answer]
 [mes_open face="😄" extra=true]
 これだ！[p]
-[image layer=0 visible=true page=back storage=d1_2.jpg top=20 left=300 height=400]
+[image layer=0 visible=true page=fore storage=d1_3.jpg top=20 left=300 height=400]
 北から吹く風で左の頬が冷たくなっている。[l]つまり、進行方向に対して左側が北だと〈私〉は言っている。[p]
 [mes_open face="😁"]
 けど影は背後に伸びているんだから、〈私〉は西に歩いていることになる。[l]西に向かっているなら、左は南になるはずだ。[p]
@@ -191,6 +200,7 @@ f.hint = 0;
 [mes_open face="😒"]
 私の証明は不完全だったんだ。[l]よく見たらこの文章、あのことについて一言も触れてない。[p]
 *select2
+[comment scene=scene1 context=select2]
 [mes_open face="😒"]
 そう、つまりここには[r]
 [link_hover target=select2_a text="【１】時間が書いてない"]
@@ -199,6 +209,7 @@ f.hint = 0;
 [s]
 
 *select2_a
+[comment scene=scene1 context=select2_2]
 [playse storage="select.ogg"]
 [cm]
 [mes_open face="😥"]
@@ -214,6 +225,7 @@ f.hint = 0;
 [mes_open face="🙂"]
 よし。新事実を本文に追記して、改めて矛盾を探そう。[p]
 矛盾がすぐに見つからないときは、書かれている文章から新しい事実を導けるかもしれない。[p]
+[eval exp="tf.m.push(tf.m_taiyou)"]
 [jump target=*think2]
 
 *select2_b
@@ -233,33 +245,30 @@ f.hint = 0;
 [jump target=*select2_a]
 
 *think2
-[iscript]
-    f.m.push(f.m_taiyou);
-[endscript]
-
-*think2_main
+[comment scene=scene1 context=think2]
 [mes_close]
 [think count_max=2 storage=scene1.ks answer=think2_answer note=think2_note]
 
 *think2_note
+[comment scene=scene1 context=think2_note]
 [mes_open face="🤔"]
 これまで気付いたことは……。[p]
-[pickupLines a="f.m[6]" b="f.m[9]"]
+[pickupLines a="tf.m[6]" b="tf.m[9]"]
 この二つの文から、影は西に伸びていることがわかる。太陽は東にあるんだ。[p]
 [cm]
-[if exp="16 < f.m.length"]
-    [pickupLines a="f.m[2]" b="f.m[14]"]
+[if exp="16 < tf.m.length"]
+    [pickupLines a="tf.m[2]" b="tf.m[14]"]
     この二つの文から、手提げ袋の中の弁当箱は空だ。[l]つまり、私は下校中だと考えていい。[p]
     [cm]
 [endif]
-[if exp="f.hint"]
+[if exp="tf.hint"]
     手提げ袋に言及している文が二か所ある。この二つから、何か新しい事実を導けないかな。[p]
 [endif]
 [cm]
-[jump target=*think2_main]
+[jump target=*think2]
 
 *think2_answer
-[if exp="hit_count([f.m_taiyou, f.m_gekou]) == 2"]
+[if exp="hit_count([tf.m_taiyou, tf.m_gekou]) == 2"]
     [jump target=*goal]
 [endif]
 [if exp="hit_count([2, 14]) == 2"]
@@ -280,29 +289,31 @@ f.hint = 0;
     [mes_open face="😋"]
     よし。多分、ゴールまであと一歩だ。[p]
     [iscript]
-        f.m.push(f.m_gekou);
-        f.hint = false;
+        tf.m.push(tf.m_gekou);
+        tf.hint = false;
     [endscript]
-    [jump target=*think2_main]
+    [jump target=*think2]
 [endif]
 [if exp="hit_count([2, 14]) == 1"]
     [mes_open face="🤔"]
     ……ん？　手提げ袋？[p]
     確か、手提げ袋に言及していた場所がもう一つあったような……。[p]
-    [eval exp="f.hint = true"]
-    [jump target=*think2_main]
+    [eval exp="tf.hint = true"]
+    [jump target=*think2]
 [endif]
-[mes_open face="😬"]
+[mes_open face="😑"]
 うーん……。[p]
-[jump target=*think2_main]
+[jump target=*think2]
 
 *goal
+[cm]
+[comment scene=scene1 context=goal]
 [stopbgm]
 [flash]
 [mes_open face="😑"]
 ……。[p]
 [playbgm storage=lens.ogg]
-[pickupLines a="f.m[2]" b="f.m[14]"]
+[pickupLines a="tf.m[2]" b="tf.m[14]"]
 [mes_open face="😌"]
 〈私〉は手提げ袋を振り回しながら道を歩いている。[p]
 転んだとき、その袋には弁当箱が入っていたことが判明する。[p]
@@ -312,10 +323,11 @@ f.hint = 0;
 私の呟きからすると、これは登校中か下校中のどちらかだ。[l]登校中なら当然弁当は入っているはず。[p]
 つまりこれは下校中――夕方の一幕で間違いない！[p]
 [mes_open face="😆"]
-[pickupLines a="f.m_taiyou"]
+[pickupLines a="tf.m_taiyou"]
 ってことは、やっぱり影の向きが方角と矛盾している！[p]
 [mes_close]
 
+[comment scene=scene1 context=goal2]
 [eval exp="openGoal('通学路の恐怖', '〈私〉の進行方向と太陽の方角、現在時刻の三点に<br/>矛盾を認める。<br/>適切に処理されたし。')"]
 [s]
 

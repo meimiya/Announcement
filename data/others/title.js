@@ -1,6 +1,6 @@
 function showTitle()
 {
-    TYRANO.kag.stat.f.p = 0;
+    TYRANO.kag.variable.tf.p = 0;
 
     TYRANO.kag.stat.current_layer = "message0";
     let mesOuter = TYRANO.kag.getMessageOuterLayer();

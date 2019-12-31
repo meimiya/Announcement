@@ -3,7 +3,7 @@
 [macro name=think]
     [position layer=1 left=0 top=0 width=960 height=640 marginl=20 margint=0 marginr=0]
     [iscript]
-        f.checked = [];
+        tf.checked = [];
         setupPage(this, mp);
     [endscript]
     [s]

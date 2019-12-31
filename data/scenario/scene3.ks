@@ -6,7 +6,7 @@
 
 
 [iscript]
-f.m = [
+tf.m = [
 ';「以上の推理により、明日香ちゃんを殺害したのは軽部氏で間違いありませんわ」',
 '　名探偵は微笑み、暖炉の前で呆然と立ち尽くす軽部氏を指さした。',
 ';「そんな……あんなに優しかった叔父さんが明日香を殺すなんて、到底信じられないわ」',
@@ -54,8 +54,8 @@ f.m = [
 'ビリヤードを教えてあげたときは、あんなに素直で無垢な子だと思っていたのに……」と藤家先生は額を押さえる。',
 ';　私は今、確実に追い詰められていた。'
 ]
-f.m_length = f.m.length
-f.page = [
+tf.m_length = tf.m.length
+tf.page = [
     [0, 5],
     [6, 12],
     [13, 20],
@@ -66,22 +66,22 @@ f.page = [
     [48, 100],
 ]
 //  ビリヤードを教えてあげた ＋ 今日初めてビリヤード
-f.m_kyou = "　私は今日、藤家先生にビリヤードを教わった。";
+tf.m_kyou = "　私は今日、藤家先生にビリヤードを教わった。";
 
 //  m_kyou ＋ 晩餐後の見回りで藤家先生
-f.m_billiard_mada = "　私たちがビリヤードをしている間は絵画はまだ盗まれていなかった。";
+tf.m_billiard_mada = "　私たちがビリヤードをしている間は絵画はまだ盗まれていなかった。";
 
 //  食堂に集まって互いを監視して ＋ m_billiard_mada
-f.m_billiard_kara_souko = "　絵画は私が撞球室を出てから倉庫に入るまでの僅かな間に盗み出された。";
+tf.m_billiard_kara_souko = "　絵画は私が撞球室を出てから倉庫に入るまでの僅かな間に盗み出された。";
 
 //  m_billiard_kara_souko ＋ 絵画をガレージに持ち込むのを見たと明日香に告げられ
-f.m_nakaniwa_kara = "　軽部が絵画を盗み出すところを明日香は中庭から見ていた。";
+tf.m_nakaniwa_kara = "　軽部が絵画を盗み出すところを明日香は中庭から見ていた。";
 
 //  m_nakaniwa_kara ＋ 私はすぐにガラス戸から中庭へ飛び出して
-f.m_watashi_ushiro = "　私は本当に明日香のすぐ後ろをついてきていた。";
+tf.m_watashi_ushiro = "　私は本当に明日香のすぐ後ろをついてきていた。";
 
 //  絵画がガレージに隠されている ＋ m_billiard_kara_souko
-f.m_watashi_shika_inai = "　密室を構成できたのは私しかいない。";
+tf.m_watashi_shika_inai = "　密室を構成できたのは私しかいない。";
 [endscript]
 
 [current layer=message0]
@@ -89,6 +89,7 @@ f.m_watashi_shika_inai = "　密室を構成できたのは私しかいない。
 ;[jump target=think1]
 [playbgm storage=halloween_sleep.ogg]
 
+[comment scene=scene3 context=read1]
 [line i=0]
 [line i=1]
 [line i=2]
@@ -99,6 +100,7 @@ f.m_watashi_shika_inai = "　密室を構成できたのは私しかいない。
 [line i=7]
 [line i=8]
 [line i=9]
+[comment scene=scene3 context=read2]
 [line i=10]
 [line i=11]
 [line i=12]
@@ -109,6 +111,7 @@ f.m_watashi_shika_inai = "　密室を構成できたのは私しかいない。
 [line i=17]
 [line i=18]
 [line i=19]
+[comment scene=scene3 context=read3]
 [line i=20]
 [line i=21]
 [line i=22]
@@ -122,6 +125,7 @@ f.m_watashi_shika_inai = "　密室を構成できたのは私しかいない。
 [line i=30]
 [line i=31]
 [line i=32]
+[comment scene=scene3 context=read4]
 [line i=33]
 [line i=34]
 [line i=35]
@@ -141,6 +145,7 @@ f.m_watashi_shika_inai = "　密室を構成できたのは私しかいない。
 [playbgm storage=lens.ogg]
 
 *prologue
+[comment scene=scene3 context=prologue]
 [mes_open face="🥴"]
 長っ！[p]
 [mes_open face=""]
@@ -152,6 +157,7 @@ f.m_watashi_shika_inai = "　密室を構成できたのは私しかいない。
 今回は推理小説だな。[l]当局は色んなジャンルの小説を製造するけど、推理小説は複雑な矛盾をはらみがちだ。[p]
 骨が折れる仕事だけど、まずは細かく見ていこう。[p]
 [mes_close]
+[comment scene=scene3 context=prologue2]
 [line i=0]
 [line i=1]
 [mes_open face="😗"]
@@ -172,6 +178,7 @@ f.m_watashi_shika_inai = "　密室を構成できたのは私しかいない。
 [line i=8]
 [line i=9]
 [line i=10]
+[comment scene=scene3 context=prologue3]
 [mes_open face="😑"]
 成り行きが全然わからん……。[p]
 ともかく、名画が発端となって起きた殺人事件みたいだ。[p]
@@ -197,6 +204,7 @@ f.m_watashi_shika_inai = "　密室を構成できたのは私しかいない。
 [freeimage layer=0]
 [layopt layer=0 visible=false]
 [mes_close]
+[comment scene=scene3 context=prologue4]
 [line i=16]
 [line i=17]
 [mes_open face="🙂"]
@@ -255,6 +263,7 @@ f.m_watashi_shika_inai = "　密室を構成できたのは私しかいない。
 [freeimage layer=0]
 [layopt layer=0 visible=false]
 [mes_close]
+[comment scene=scene3 context=prologue5]
 [line i=20]
 [line i=21]
 [line i=22]
@@ -301,6 +310,7 @@ f.m_watashi_shika_inai = "　密室を構成できたのは私しかいない。
 [mes_open face="🙁"]
 少なくとも内部犯なのは確かだろうし。[p]
 [mes_close]
+[comment scene=scene3 context=prologue6]
 [line i=28]
 [line i=29]
 [line i=30]
@@ -360,6 +370,7 @@ f.m_watashi_shika_inai = "　密室を構成できたのは私しかいない。
 [freeimage layer=0]
 [layopt layer=0 visible=false]
 [mes_close]
+[comment scene=scene3 context=prologue7]
 [line i=33]
 [line i=34]
 [line i=35]
@@ -391,6 +402,7 @@ f.m_watashi_shika_inai = "　密室を構成できたのは私しかいない。
 といっても、今回は方針が見えないなぁ。[p]
 まず、早業施錠の密室トリックが使われたのは確かなんだ。[p]
 [mes_open face="🤔"]
+[comment scene=scene3 context=select1]
 とすると、それを実行できたのは……[r]
 [link_hover target=select1_a text="【１】〈私〉だけ"]
 [link_hover target=select1_b text="【２】〈私〉と軽部"]
@@ -423,10 +435,12 @@ f.m_watashi_shika_inai = "　密室を構成できたのは私しかいない。
 [cm]
 
 *think1
+[comment scene=scene3 context=think1]
 [mes_close]
 [think count_max=2 storage=scene3.ks answer=think1_answer note=think1_note]
 
 *think1_note
+[comment scene=scene3 context=think1_note]
 [mes_open face="🙂"]
 [image layer=0 visible=true page=fore storage=d3_1.svg top=10 left=350]
 犯人は倉庫の中で女中を殺害した後、チェーンロックをかけ、裏口から出て行った。[p]
@@ -480,21 +494,21 @@ f.m_watashi_shika_inai = "　密室を構成できたのは私しかいない。
 
 *think1_answer
 ;   ゴール
-[if exp="hit_count([f.m_watashi_ushiro, f.m_watashi_shika_inai]) == 2"]
+[if exp="hit_count([tf.m_watashi_ushiro, tf.m_watashi_shika_inai]) == 2"]
     [jump target=goal]
 [endif]
 ;   ビリヤード
-[if exp="hit_count([44, 38]) == 2 && f.m.indexOf(f.m_kyou) == -1"]
+[if exp="hit_count([44, 38]) == 2 && tf.m.indexOf(tf.m_kyou) == -1"]
     [mes_open face="🤔" extra=true]
     〈私〉がビリヤードを遊んだのは今日が初めてで、藤家先生が〈私〉にビリヤードを教えたってことは……[p]
     [mes_open face="😀"]
     当然、藤家のコーチングは今日行われたってことだよね。[p]
     [mes_open face="🙂"]
     密室とは何の関係もなさそうだけど……念のため追記しておこうかな。[p]
-    [eval exp="f.p = 6;f.m.push(f.m_kyou)"]
+    [eval exp="tf.p = 6;tf.m.push(tf.m_kyou)"]
     [jump target=think1]
 [endif]
-[if exp="hit_count([44, 38]) == 1 && f.m.indexOf(f.m_kyou) == -1"]
+[if exp="hit_count([44, 38]) == 1 && tf.m.indexOf(tf.m_kyou) == -1"]
     [mes_open face="🤔"]
     ビリヤードへの言及がいくつかあるなぁ。[p]
     ビリヤードをやる部屋は殺人現場である倉庫の向かいにあるけど、事件に何か関係しているのかな？[p]
@@ -504,7 +518,7 @@ f.m_watashi_shika_inai = "　密室を構成できたのは私しかいない。
     [jump target=think1]
 [endif]
 ;   絵画はまだ盗まれていなかった
-[if exp="hit_count([f.m_kyou, 5]) == 2 && f.m.indexOf(f.m_billiard_mada) == -1"]
+[if exp="hit_count([tf.m_kyou, 5]) == 2 && tf.m.indexOf(tf.m_billiard_mada) == -1"]
     [mes_open face="🤔" extra=true]
     待てよ……？　絵画が盗まれてるって藤家先生が騒ぎ出したのは、晩餐後の見回りのときだったよね。[p]
     [mes_open face="🙂"]
@@ -522,17 +536,17 @@ f.m_watashi_shika_inai = "　密室を構成できたのは私しかいない。
     その後も撞球室には三人娘がずっといたんだから、絵を盗むことはできなかった……。[p]
     この情報は役立ちそうだから、追記しておこう。[p]
     この発見は、「絵画はいつ盗み出されたのか」って問題に繋がっていきそうな気がする。[p]
-    [eval exp="f.p = 6;f.m.push(f.m_billiard_mada)"]
+    [eval exp="tf.p = 6;tf.m.push(tf.m_billiard_mada)"]
     [jump target=think1]
 [endif]
-[if exp="hit_count([5]) == 1 && f.m.indexOf(f.m_billiard_mada) == -1"]
+[if exp="hit_count([5]) == 1 && tf.m.indexOf(tf.m_billiard_mada) == -1"]
     [mes_open face="🤔"]
     先生は晩餐の後に絵画が盗まれたことに気付いた……。[p]
     その絵画は撞球室にあったんだよね。[l]この絵画、いつ盗まれたんだろう？[p]
     [jump target=think1]
 [endif]
 ;   撞球室を出てから倉庫に入るまでの僅かな間に盗み出された
-[if exp="hit_count([f.m_billiard_mada, 27]) == 2 && f.m.indexOf(f.m_billiard_kara_souko) == -1"]
+[if exp="hit_count([tf.m_billiard_mada, 27]) == 2 && tf.m.indexOf(tf.m_billiard_kara_souko) == -1"]
     [mes_open face="🤔" extra=true]
     食堂に集まって互いを監視していた……。[p]
     [mes_open face="😑"]
@@ -546,10 +560,10 @@ f.m_watashi_shika_inai = "　密室を構成できたのは私しかいない。
     つまり軽部は、〈私〉たちが中庭に出ている僅かな間に絵画を盗み出したことになる……！[p]
     [mes_open face="😦"]
     ……追記しておこう。[p]
-    [eval exp="f.p = 7;f.m.push(f.m_billiard_kara_souko)"]
+    [eval exp="tf.p = 7;tf.m.push(tf.m_billiard_kara_souko)"]
     [jump target=think1]
 [endif]
-[if exp="hit_count([27]) == 1 && f.m.indexOf(f.m_billiard_kara_souko) == -1"]
+[if exp="hit_count([27]) == 1 && tf.m.indexOf(tf.m_billiard_kara_souko) == -1"]
     [mes_open face="🤔"]
     女中の遺体発見の後は、お互いを監視していた……。[p]
     軽部はその状況下で明日香を殺害したわけだ。[l]まぁ目を盗んでこっそり毒を盛るくらいのことはできたのか。[p]
@@ -558,7 +572,7 @@ f.m_watashi_shika_inai = "　密室を構成できたのは私しかいない。
     [jump target=think1]
 [endif]
 ;   軽部が絵画を盗み出すところを明日香は中庭から見ていた
-[if exp="hit_count([f.m_billiard_kara_souko, 10]) == 2 && f.m.indexOf(f.m_nakaniwa_kara) == -1"]
+[if exp="hit_count([tf.m_billiard_kara_souko, 10]) == 2 && tf.m.indexOf(tf.m_nakaniwa_kara) == -1"]
     [mes_open face="😯" extra=true]
     ちょ、ちょっと待って！[p]
     軽部が絵画を盗み出したのが〈私〉たちが中庭に出ている間なら、明日香が軽部の犯行を目撃したのもその時しかない……！[p]
@@ -567,10 +581,10 @@ f.m_watashi_shika_inai = "　密室を構成できたのは私しかいない。
     しかも、明日香と同じく中庭にいた〈私〉や珠樹は軽部の盗難に全く気付いていなかった。[p]
     [mes_open face="😏"]
     この推理の向かう先が見えてきたかもしれないね。[l]追記しておこう。[p]
-    [eval exp="f.p = 7;f.m.push(f.m_nakaniwa_kara)"]
+    [eval exp="tf.p = 7;tf.m.push(tf.m_nakaniwa_kara)"]
     [jump target=think1]
 [endif]
-[if exp="hit_count([10]) == 1 && f.m.indexOf(f.m_nakaniwa_kara) == -1"]
+[if exp="hit_count([10]) == 1 && tf.m.indexOf(tf.m_nakaniwa_kara) == -1"]
     [mes_open face="🤔"]
     んん……？　明日香は「絵画をガレージに持ち込むのを見た」と軽部に告げてる……。[p]
     殺されたのは明日香だけなんだから、軽部の犯行を目撃したのも当然明日香だけのはずだ。[p]
@@ -578,7 +592,7 @@ f.m_watashi_shika_inai = "　密室を構成できたのは私しかいない。
     [jump target=think1]
 [endif]
 ;   私は本当に明日香のすぐ後ろをついてきていた。
-[if exp="hit_count([f.m_nakaniwa_kara, 19]) == 2 && f.m.indexOf(f.m_watashi_ushiro) == -1"]
+[if exp="hit_count([tf.m_nakaniwa_kara, 19]) == 2 && tf.m.indexOf(tf.m_watashi_ushiro) == -1"]
     [mes_open face="😉" extra=true]
     なるほど、そういうことか。[p]
     庭園への扉はガラス戸だ。[l]ガラス越しに中庭から廊下の中を見ることができる。[p]
@@ -605,13 +619,13 @@ f.m_watashi_shika_inai = "　密室を構成できたのは私しかいない。
     [mes_open face="😀"]
     だから、明日香の『〈私〉はすぐ後ろをついてきた』って証言は真実！[p]
     名探偵が指摘した早業密室トリックは、〈私〉には使えなかったんだ。[p]
-    [eval exp="f.p = 7;f.m.push(f.m_watashi_ushiro)"]
+    [eval exp="tf.p = 7;tf.m.push(tf.m_watashi_ushiro)"]
     [freeimage layer=0]
     [layopt layer=0 visible=false]
     [jump target=think1]
 [endif]
 ;   密室を構成できたのは私しかいない。
-[if exp="hit_count([f.m_billiard_kara_souko, 6]) == 2 && f.m.indexOf(f.m_watashi_shika_inai) == -1"]
+[if exp="hit_count([tf.m_billiard_kara_souko, 6]) == 2 && tf.m.indexOf(tf.m_watashi_shika_inai) == -1"]
     [mes_open face="😯" extra=true]
     あっ。[l]軽部が早業密室トリックを実行できなかったことは証明できるかも。[p]
     [mes_open face="😏"]
@@ -627,7 +641,7 @@ f.m_watashi_shika_inai = "　密室を構成できたのは私しかいない。
     よしよし、これで軽部密室構築説は考えなくてよくなったね。[l]追記しておこう。[p]
     [freeimage layer=0]
     [layopt layer=0 visible=false]
-    [eval exp="f.p = 7;f.m.push(f.m_watashi_shika_inai)"]
+    [eval exp="tf.p = 7;tf.m.push(tf.m_watashi_shika_inai)"]
     [jump target=think1]
 [endif]
 
@@ -638,6 +652,8 @@ f.m_watashi_shika_inai = "　密室を構成できたのは私しかいない。
 [jump target=think1]
 
 *goal
+[cm]
+[comment scene=scene3 context=goal]
 [flash]
 [stopbgm]
 [mes_open face="😑" extra=true]
@@ -650,22 +666,23 @@ f.m_watashi_shika_inai = "　密室を構成できたのは私しかいない。
 けど残りの二人、軽部と〈私〉の不可能性を示すのはちょっと面倒だ。[p]
 [mes_open face="🙂"]
 まず、絵画が盗まれた時間を特定する必要がある。[p]
-[pickupLines a="f.m[38]" b="f.m[44]"]
+[pickupLines a="tf.m[38]" b="tf.m[44]"]
 この二文から、私が藤家先生にビリヤードの手ほどきを受けたのは今日のことだってことがわかる。[p]
 つまり先生は、今日の午後に撞球室にいたんだ。[p]
-[pickupLines a="f.m[5]"]
+[pickupLines a="tf.m[5]"]
 [mes_open face="😏"]
 先生が絵画の盗難に気付いたのは晩餐の後だった。[p]
 つまり〈私〉たちがビリヤードに興じていたときは、絵画はまだ盗まれてなかったんだ。[p]
-[pickupLines a="f.m[27]"]
+[comment scene=scene3 context=goal2]
+[pickupLines a="tf.m[27]"]
 更に、女中の遺体発見後は全員が互いを監視していたんだから、絵画を盗むことなんてできない。[p]
 結局のところ、絵画は倉庫の異常に気付いた〈私〉たちがおたおたしている間に盗まれたんだ。[p]
-[pickupLines a="f.m[6]"]
+[pickupLines a="tf.m[6]"]
 軽部は〈私〉たちが中庭に出ている間に絵画をガレージへ廃棄しに行った。[p]
 ガレージは裏口と同じくらい離れているから、ガレージと裏口の両方に行く時間は軽部にはなかったはずだ。[p]
 [mes_open face="😁"]
 よって軽部には密室を作ることができなかった。[p]
-[pickupLines a="f.m[10]"]
+[pickupLines a="tf.m[10]"]
 [mes_open face="😏"]
 次に〈私〉について。[p]
 明日香は軽部がガレージに絵画を持っていく姿を見たと言ったらしい。[p]
@@ -679,6 +696,7 @@ f.m_watashi_shika_inai = "　密室を構成できたのは私しかいない。
 [mes_open face="😆"]
 文字通りの不可能トリックだ！[p]
 
+[comment scene=scene3 context=goal3]
 [mes_close]
 [eval exp="openGoal('密室トリック破れたり', '名探偵が解き明かした密室トリックを<br/>実行可能だった登場人物が存在しない。<br/>適切に処理されたし。')"]
 [s]

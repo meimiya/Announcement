@@ -1,7 +1,7 @@
 ;一番最初に呼び出されるファイル
 
 [title name="ノベルデバッガー"]
-[configdelay speed="5"]
+[configdelay speed="3"]
 [loadjs storage=title.js]
 [loadjs storage=mesbox.js]
 [loadjs storage=thinking.js]
@@ -25,7 +25,7 @@
 
 [macro name=line]
     [iscript]
-        var text = f.m[parseInt(mp.i)];
+        var text = tf.m[parseInt(mp.i)];
         while (text[0] == ";")
         {
             text = text.substring(1);
@@ -34,9 +34,9 @@
     [endscript]
     [l]
     [iscript]
-        if(parseInt(mp.i) + 1 < f.m.length)
+        if(parseInt(mp.i) + 1 < tf.m.length)
         {
-            var text = f.m[parseInt(mp.i) + 1];
+            var text = tf.m[parseInt(mp.i) + 1];
             while (text[0] == ";")
             {
                 text = text.substring(1);
@@ -50,9 +50,9 @@
 [endmacro]
 
 [macro name=line_noclick]
-    [emb exp="f.m[parseInt(mp.index)]"]
-    [if exp="parseInt(mp.index) + 1 < f.m.length"]
-        [r cond="rch.indexOf(f.m[parseInt(mp.index) + 1][0]) != -1"]
+    [emb exp="tf.m[parseInt(mp.index)]"]
+    [if exp="parseInt(mp.index) + 1 < tf.m.length"]
+        [r cond="rch.indexOf(tf.m[parseInt(mp.index) + 1][0]) != -1"]
     [endif]
 [endmacro]
 
@@ -102,14 +102,31 @@
     [layopt layer=message2 visible=false]
 [endmacro]
 
+[macro name=comment]
+    [iscript]
+        if("RPGAtsumaru" in window)
+        {
+            if(tf.SCENE != mp.scene)
+            {
+                window.RPGAtsumaru.comment.changeScene(mp.scene);
+                tf.SCENE = mp.scene;
+            }
+            window.RPGAtsumaru.comment.setContext(mp.context);
+        }
+    [endscript]
+[endmacro]
+
 ;------------------------------------------------------------------------------
 
 [iscript]
+    tf.SCENE = "";
     $(".message_inner").css("z-index", "");
     $(".message_outer").css("z-index", "");
 [endscript]
 
+
 *title
+[comment scene=title context=title]
 [stopbgm]
 [position layer=message0 left=0 top=0 width=960 height=640 marginl=20 margint=0 marginr=20 page=fore visible=true]
 [layopt layer=message0 visible=true]
