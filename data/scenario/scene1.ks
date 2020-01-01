@@ -55,7 +55,8 @@ tf.hint = 0;
 [line i=10]
 [line i=11]
 [line i=12]
-[line i=13][cm]
+[line i=13]
+[line i=14][cm]
 
 *prologue
 [comment scene=scene1 context=prologue1]
@@ -98,6 +99,7 @@ tf.hint = 0;
 [line i=11]
 [line i=12]
 [line i=13]
+[line i=14]
 [mes_open face="😙"]抜粋はここまでだ。[l]ここからホラー展開に突入しそうな感じ。[p]
 [mes_open face="😯"]あっ、校正指示書に条件が書いてある。[l]「オカルト、SFなし」だって？[p]
 [mes_open face="😊"]つまり、現実世界を描いていることが大前提なんだ。[p]
